@@ -1,0 +1,24 @@
+@layer components {
+    .info-form {
+        display: grid;
+    }
+
+    .info-form input {
+        padding: 0.5em;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--light-gray);
+        color: var(--marine-blue);
+        font-weight: var(--fw-bold);
+        margin-bottom: 1em;
+    }
+
+    .info-form input:last-child {
+        margin-bottom: 0;
+    }
+
+    .info-form label {
+        font-size: var(--fs-small);
+        color: var(--marine-blue);
+        margin-bottom: 0.2em;
+    }
+}

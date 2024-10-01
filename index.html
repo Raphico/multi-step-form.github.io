@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="./css/globals.css" />
+        <link rel="preconnect" href="./css/adds-on.css" />
+        <link rel="preconnect" href="./css/plans.css" />
+        <link rel="preconnect" href="./css/info.css" />
+        <link rel="preconnect" href="./css/thank-you.css" />
+        <link rel="preconnect" href="./css/finishing-up.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/globals.css" />
+        <link rel="stylesheet" href="./css/adds-on.css" />
+        <link rel="stylesheet" href="./css/plans.css" />
+        <link rel="stylesheet" href="./css/info.css" />
+        <link rel="stylesheet" href="./css/thank-you.css" />
+        <link rel="stylesheet" href="./css/finishing-up.css" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <title>Multi Step Form</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ol role="list">
+                        <li>
+                            <a href="/">1</a>
+                            <div>
+                                <p>step 1</p>
+                                <p>Your Info</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="current" href="/step-2">2</a>
+                            <div>
+                                <p>step 2</p>
+                                <p>Select Plan</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/step-3">3</a>
+                            <div>
+                                <p>step 3</p>
+                                <p>Add-ons</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/step-4">4</a>
+                            <div>
+                                <p>step 4</p>
+                                <p>Summary</p>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </header>
+
+            <main>
+                <section class="thank-you text-center">
+                    <div class="thank-you-img">
+                        <img
+                            src="./assets/images/icon-thank-you.svg"
+                            alt=""
+                            aria-hidden="true"
+                        />
+                    </div>
+                    <h1 class="h3">Thank you!</h1>
+                    <p class="cool-gray">
+                        Thanks for confirming your subscription! We hope you
+                        have fun using our platform. If you ever need support,
+                        please feel free to email us at support@loremgaming.com.
+                    </p>
+                </section>
+                <!-- <section class="form-section">
+                    <h1 class="h2">Finishing up</h1>
+                    <p class="form-desc cool-gray">
+                        Double-check everything looks OK before confirming
+                    </p>
+                    <table cellspacing="0">
+                        <tbody>
+                            <tr class="arcade">
+                                <td>
+                                    <p class="fw-medium fs-small">
+                                        Arcade (Monthly)
+                                    </p>
+                                    <a class="cool-gray fs-small" href="#"
+                                        >Change</a
+                                    >
+                                </td>
+                                <td class="fw-bold fs-small">$9/mo</td>
+                            </tr>
+                            <tr>
+                                <td class="fs-small cool-gray">
+                                    Online service
+                                </td>
+                                <td class="fs-small">+$1/mo</td>
+                            </tr>
+                            <tr>
+                                <td class="fs-small cool-gray">
+                                    Larger storage
+                                </td>
+                                <td class="fs-small">+$2/mo</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td class="cool-gray fs-small">Total(per month)</td>
+                            <td class="purplish-blue fw-bold">$12/mo</td>
+                        </tfoot>
+                    </table> -->
+                <!-- <form class="add-ons-form">
+                    <fieldset>
+                        <label>
+                            <div>
+                                <p class="fw-medium fs-small">Online service</p>
+                                <p class="cool-gray fs-xs">
+                                    Access to multiplayer games
+                                </p>
+                            </div>
+                            <p class="purplish-blue fs-xs">+$1/mo</p>
+                            <input type="checkbox" checked />
+                            <span class="checkmark"></span>
+                        </label>
+                        <label>
+                            <div>
+                                <p class="fw-medium fs-small">Online service</p>
+                                <p class="cool-gray fs-xs">
+                                    Extra 1TB of cloud save
+                                </p>
+                            </div>
+                            <p class="purplish-blue fs-xs">+$2/mo</p>
+                            <input type="checkbox" checked />
+                            <span class="checkmark"></span>
+                        </label>
+                        <label>
+                            <div>
+                                <p class="fw-medium fs-small">
+                                    Customizable profile
+                                </p>
+                                <p class="cool-gray fs-xs">
+                                    Custom theme on your profile
+                                </p>
+                            </div>
+                            <p class="purplish-blue fs-xs">+$2/mo</p>
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </fieldset>
+                </form> -->
+                <!-- <form class="plans-form">
+                        <fieldset>
+                            <div class="plans" role="radiogroup">
+                                <div
+                                    class="plan"
+                                    role="radio"
+                                    aria-checked="true"
+                                    tabindex="0"
+                                    aria-label="Arcade plan $9 per month"
+                                >
+                                    <img
+                                        src="./assets/images/icon-arcade.svg"
+                                        alt=""
+                                        aria-hidden="true"
+                                    />
+                                    <div>
+                                        <p class="fw-medium">Arcade</p>
+                                        <p class="fs-small cool-gray">$9/mo</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="plan"
+                                    role="radio"
+                                    aria-checked="false"
+                                    tabindex="0"
+                                    aria-label="Advanced plan $12 per month"
+                                >
+                                    <div class="form-2-img-container">
+                                        <img
+                                            src="./assets/images/icon-advanced.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p class="fw-medium">Advanced</p>
+                                        <p class="fs-small cool-gray">$12/mo</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="plan"
+                                    role="radio"
+                                    aria-checked="false"
+                                    tabindex="0"
+                                    aria-label="Pro plan $15 per month"
+                                >
+                                    <div class="form-2-img-container">
+                                        <img
+                                            src="./assets/images/icon-pro.svg"
+                                            alt=""
+                                            aria-hidden="true"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p class="fw-medium">Pro</p>
+                                        <p class="fs-small cool-gray">$15/mo</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="renewal">
+                                <span class="fw-bold fs-small">Monthly</span>
+                                <label class="switch">
+                                    <input type="checkbox" />
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="fw-bold fs-small">Yearly</span>
+                            </div>
+                        </fieldset>
+                    </form> -->
+
+                <!-- <form class="info-form">
+                        <label for="name">Name</label>
+                        <input
+                            id="name"
+                            name="name"
+                            placeholder="e.g Stephen King"
+                            type="text"
+                        />
+                        <label for="email">Email Address</label>
+                        <input
+                            id="email"
+                            name="email"
+                            placeholder="e.g stephenking@lorem.com"
+                            type="email"
+                        />
+                        <label for="phoneNumber">Phone Number</label>
+                        <input
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            placeholder="e.g +1 234 567 890"
+                            type="text"
+                        />
+                    </form> -->
+                <!-- </section> -->
+            </main>
+
+            <footer>
+                <button
+                    class="go-back cool-gray"
+                    type="button"
+                    aria-label="Go back to the previous step"
+                >
+                    Go back
+                </button>
+                <button
+                    class="next-step"
+                    type="button"
+                    aria-label="Move on to the next step"
+                >
+                    Next Step
+                </button>
+                <!-- <button class="confirm" type="button" aria-label="Confirm">
+                Confirm
+            </button> -->
+            </footer>
+        </div>
+    </body>
+</html>
