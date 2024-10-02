@@ -2,10 +2,6 @@ class Router {
     constructor() {
         this.routes = {};
         this.currentRoute = undefined;
-
-        window.addEventListener("popstate", () => {
-            this.navigate(window.location.pathname);
-        });
     }
 
     /**
@@ -26,8 +22,8 @@ class Router {
             return;
         }
 
-        this.routes[path]();
         this.currentRoute = path;
+        this.routes[path]();
     }
 
     /**
