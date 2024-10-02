@@ -101,7 +101,7 @@ function nextStepButton() {
             for (let i = 0; i < routes.length; i++) {
                 if (routes[i].path == router.currentRoute) {
                     const nextStep = routes[i + 1].path;
-                    router.pushRoute(nextStep);
+                    router.pushRoute(nextStep, true);
 
                     const nextStepLink = getCurrentLink(nextStep);
                     nextStepLink.classList.remove("disable");
@@ -117,7 +117,7 @@ function confirmButton() {
     const buttonTemplate = document.getElementById("confirmTemplate");
     const button = buttonTemplate.content.cloneNode(true);
     button.querySelector(".confirm").addEventListener("click", function () {
-        router.pushRoute("/thank-you");
+        router.pushRoute("/thank-you", true);
     });
     return button;
 }

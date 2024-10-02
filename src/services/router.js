@@ -1,9 +1,4 @@
 class Router {
-    constructor() {
-        this.routes = [];
-        this.currentRoute = undefined;
-    }
-
     /**
      * Represents a route object.
      * @typedef {Object} Route
@@ -11,6 +6,11 @@ class Router {
      * @property {function} handler - The function that handles this route.
      * @property {boolean} canVisit - Whether the route can be visited.
      */
+    constructor() {
+        /** @type {Array<Route>} */
+        this.routes = [];
+        this.currentRoute = undefined;
+    }
 
     /**
      * Initialize app routes
@@ -24,13 +24,17 @@ class Router {
      * Navigate to specified route
      * @param {string} path - The path to navigate to
      */
-    navigate(path) {
+    navigate(path, unProtect) {
+        if (unProtect) {
+            this.setRouteToCanVisit(path);
+        }
+
         const route = this.findRoute(path);
-        if (route == null) {
+
+        if (!route.canVisit) {
             return;
         }
 
-        this.setRouteToCanVisit(path);
         this.currentRoute = path;
         route.handler();
     }
@@ -49,9 +53,9 @@ class Router {
      * Add a path to history
      * @param {string} path - The path to add to history
      */
-    pushRoute(path) {
+    pushRoute(path, unProtect) {
         window.history.pushState({ path }, null, path);
-        this.navigate(path);
+        this.navigate(path, unProtect);
     }
 }
 
