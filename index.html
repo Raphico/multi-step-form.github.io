@@ -5,22 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <!-- <link rel="preconnect" href="./css/globals.css" />
-        <link rel="preconnect" href="./css/adds-on.css" />
-        <link rel="preconnect" href="./css/plans.css" />
-        <link rel="preconnect" href="./css/info.css" />
-        <link rel="preconnect" href="./css/thank-you.css" />
-        <link rel="preconnect" href="./css/finishing-up.css" /> -->
         <link
             href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./css/globals.css" />
-        <link rel="stylesheet" href="./css/adds-on.css" />
-        <link rel="stylesheet" href="./css/plans.css" />
-        <link rel="stylesheet" href="./css/info.css" />
-        <link rel="stylesheet" href="./css/thank-you.css" />
-        <link rel="stylesheet" href="./css/finishing-up.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
         <link
             rel="icon"
             type="image/png"
@@ -67,98 +56,47 @@
                 </nav>
             </header>
 
-            <main>
-                <section class="thank-you text-center">
-                    <div class="thank-you-img">
-                        <img
-                            src="./assets/images/icon-thank-you.svg"
-                            alt=""
-                            aria-hidden="true"
-                        />
-                    </div>
-                    <h1 class="h3">Thank you!</h1>
-                    <p class="cool-gray">
-                        Thanks for confirming your subscription! We hope you
-                        have fun using our platform. If you ever need support,
-                        please feel free to email us at support@loremgaming.com.
-                    </p>
-                </section>
-                <!-- <section class="form-section">
-                    <h1 class="h2">Finishing up</h1>
+            <main id="main"></main>
+            <template id="step1PageTemplate">
+                <section class="form-section">
+                    <h1 class="form-title">Personal info</h1>
                     <p class="form-desc cool-gray">
-                        Double-check everything looks OK before confirming
+                        Please provide your name, email address, and phone
+                        number.
                     </p>
-                    <table cellspacing="0">
-                        <tbody>
-                            <tr class="arcade">
-                                <td>
-                                    <p class="fw-medium fs-small">
-                                        Arcade (Monthly)
-                                    </p>
-                                    <a class="cool-gray fs-small" href="#"
-                                        >Change</a
-                                    >
-                                </td>
-                                <td class="fw-bold fs-small">$9/mo</td>
-                            </tr>
-                            <tr>
-                                <td class="fs-small cool-gray">
-                                    Online service
-                                </td>
-                                <td class="fs-small">+$1/mo</td>
-                            </tr>
-                            <tr>
-                                <td class="fs-small cool-gray">
-                                    Larger storage
-                                </td>
-                                <td class="fs-small">+$2/mo</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <td class="cool-gray fs-small">Total(per month)</td>
-                            <td class="purplish-blue fw-bold">$12/mo</td>
-                        </tfoot>
-                    </table> -->
-                <!-- <form class="add-ons-form">
-                    <fieldset>
-                        <label>
-                            <div>
-                                <p class="fw-medium fs-small">Online service</p>
-                                <p class="cool-gray fs-xs">
-                                    Access to multiplayer games
-                                </p>
-                            </div>
-                            <p class="purplish-blue fs-xs">+$1/mo</p>
-                            <input type="checkbox" checked />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label>
-                            <div>
-                                <p class="fw-medium fs-small">Online service</p>
-                                <p class="cool-gray fs-xs">
-                                    Extra 1TB of cloud save
-                                </p>
-                            </div>
-                            <p class="purplish-blue fs-xs">+$2/mo</p>
-                            <input type="checkbox" checked />
-                            <span class="checkmark"></span>
-                        </label>
-                        <label>
-                            <div>
-                                <p class="fw-medium fs-small">
-                                    Customizable profile
-                                </p>
-                                <p class="cool-gray fs-xs">
-                                    Custom theme on your profile
-                                </p>
-                            </div>
-                            <p class="purplish-blue fs-xs">+$2/mo</p>
-                            <input type="checkbox" />
-                            <span class="checkmark"></span>
-                        </label>
-                    </fieldset>
-                </form> -->
-                <!-- <form class="plans-form">
+                    <form class="info-form">
+                        <label for="name">Name</label>
+                        <input
+                            id="name"
+                            name="name"
+                            placeholder="e.g Stephen King"
+                            type="text"
+                        />
+                        <label for="email">Email Address</label>
+                        <input
+                            id="email"
+                            name="email"
+                            placeholder="e.g stephenking@lorem.com"
+                            type="email"
+                        />
+                        <label for="phoneNumber">Phone Number</label>
+                        <input
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            placeholder="e.g +1 234 567 890"
+                            type="text"
+                        />
+                    </form>
+                </section>
+            </template>
+
+            <template id="step2PageTemplate">
+                <section class="form-section">
+                    <h1 class="form-title">Select your plan</h1>
+                    <p class="form-desc cool-gray">
+                        You have the option of monthly or yearly billing.
+                    </p>
+                    <form class="plans-form">
                         <fieldset>
                             <div class="plans" role="radiogroup">
                                 <div
@@ -226,52 +164,144 @@
                                 <span class="fw-bold fs-small">Yearly</span>
                             </div>
                         </fieldset>
-                    </form> -->
+                    </form>
+                </section>
+            </template>
 
-                <!-- <form class="info-form">
-                        <label for="name">Name</label>
-                        <input
-                            id="name"
-                            name="name"
-                            placeholder="e.g Stephen King"
-                            type="text"
+            <template id="step3PageTemplate">
+                <section class="form-section">
+                    <h1 class="form-title">Pick add-ons</h1>
+                    <p class="form-desc cool-gray">
+                        Add-ons help enhance your gaming experience.
+                    </p>
+                    <form class="add-ons-form">
+                        <fieldset>
+                            <label>
+                                <div>
+                                    <p class="fw-medium fs-small">
+                                        Online service
+                                    </p>
+                                    <p class="cool-gray fs-xs">
+                                        Access to multiplayer games
+                                    </p>
+                                </div>
+                                <p class="purplish-blue fs-xs">+$1/mo</p>
+                                <input type="checkbox" checked />
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <div>
+                                    <p class="fw-medium fs-small">
+                                        Online service
+                                    </p>
+                                    <p class="cool-gray fs-xs">
+                                        Extra 1TB of cloud save
+                                    </p>
+                                </div>
+                                <p class="purplish-blue fs-xs">+$2/mo</p>
+                                <input type="checkbox" checked />
+                                <span class="checkmark"></span>
+                            </label>
+                            <label>
+                                <div>
+                                    <p class="fw-medium fs-small">
+                                        Customizable profile
+                                    </p>
+                                    <p class="cool-gray fs-xs">
+                                        Custom theme on your profile
+                                    </p>
+                                </div>
+                                <p class="purplish-blue fs-xs">+$2/mo</p>
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                            </label>
+                        </fieldset>
+                    </form>
+                </section>
+            </template>
+
+            <template id="step4PageTemplate">
+                <section class="form-section">
+                    <h1 class="form-title">Finishing up</h1>
+                    <p class="form-desc cool-gray">
+                        Double-check everything looks OK before confirming.
+                    </p>
+                    <table cellspacing="0">
+                        <tbody>
+                            <tr class="arcade">
+                                <td>
+                                    <p class="fw-medium fs-small">
+                                        Arcade (Monthly)
+                                    </p>
+                                    <a class="cool-gray fs-small" href="#"
+                                        >Change</a
+                                    >
+                                </td>
+                                <td class="fw-bold fs-small">$9/mo</td>
+                            </tr>
+                            <tr>
+                                <td class="fs-small cool-gray">
+                                    Online service
+                                </td>
+                                <td class="fs-small">+$1/mo</td>
+                            </tr>
+                            <tr>
+                                <td class="fs-small cool-gray">
+                                    Larger storage
+                                </td>
+                                <td class="fs-small">+$2/mo</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td class="cool-gray fs-small">Total(per month)</td>
+                            <td class="purplish-blue fw-bold">$12/mo</td>
+                        </tfoot>
+                    </table>
+                </section>
+            </template>
+
+            <template id="thankYouPageTemplate">
+                <section class="thank-you text-center">
+                    <div class="thank-you-img">
+                        <img
+                            src="./assets/images/icon-thank-you.svg"
+                            alt=""
+                            aria-hidden="true"
                         />
-                        <label for="email">Email Address</label>
-                        <input
-                            id="email"
-                            name="email"
-                            placeholder="e.g stephenking@lorem.com"
-                            type="email"
-                        />
-                        <label for="phoneNumber">Phone Number</label>
-                        <input
-                            id="phoneNumber"
-                            name="phoneNumber"
-                            placeholder="e.g +1 234 567 890"
-                            type="text"
-                        />
-                    </form> -->
-                <!-- </section> -->
-            </main>
+                    </div>
+                    <h1 class="h3">Thank you!</h1>
+                    <p class="cool-gray">
+                        Thanks for confirming your subscription! We hope you
+                        have fun using our platform. If you ever need support,
+                        please feel free to email us at support@loremgaming.com.
+                    </p>
+                </section>
+            </template>
 
             <footer>
-                <button
-                    class="go-back cool-gray"
-                    type="button"
-                    aria-label="Go back to the previous step"
-                >
-                    Go back
-                </button>
-                <button
-                    class="next-step"
-                    type="button"
-                    aria-label="Move on to the next step"
-                >
-                    Next Step
-                </button>
-                <!-- <button class="confirm" type="button" aria-label="Confirm">
-                Confirm
-            </button> -->
+                <template id="goBackTemplate">
+                    <button
+                        class="go-back cool-gray"
+                        type="button"
+                        aria-label="Go back to the previous step"
+                    >
+                        Go back
+                    </button>
+                </template>
+                <template id="nextStepTemplate">
+                    <button
+                        class="next-step"
+                        type="button"
+                        aria-label="Move on to the next step"
+                    >
+                        Next Step
+                    </button>
+                </template>
+                <template id="confirmTemplate">
+                    <button class="confirm" type="button" aria-label="Confirm">
+                        Confirm
+                    </button>
+                </template>
             </footer>
         </div>
     </body>
