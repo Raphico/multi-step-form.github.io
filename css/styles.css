@@ -133,6 +133,12 @@
         font-size: var(--fs-small);
     }
 
+    .disable {
+        pointer-events: none;
+        border-color: var(--cool-gray);
+        color: var(--cool-gray);
+    }
+
     nav a.current,
     nav a:hover,
     nav a:focus {

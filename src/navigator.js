@@ -4,13 +4,33 @@ const navLinks = document.querySelectorAll(".nav-link");
 const main = document.getElementById("main");
 const footer = document.getElementById("footer");
 
-const routes = {
-    "/": navigateToStep1,
-    "/step-2": navigateToStep2,
-    "/step-3": navigateToStep3,
-    "/step-4": navigateToStep4,
-    "/thank-you": navigateToThankYou,
-};
+const routes = [
+    {
+        path: "/",
+        handler: navigateToStep1,
+        canVisit: true,
+    },
+    {
+        path: "/step-2",
+        handler: navigateToStep2,
+        canVisit: false,
+    },
+    {
+        path: "/step-3",
+        handler: navigateToStep3,
+        canVisit: false,
+    },
+    {
+        path: "/step-4",
+        handler: navigateToStep4,
+        canVisit: false,
+    },
+    {
+        path: "/thank-you",
+        handler: navigateToThankYou,
+        canVisit: false,
+    },
+];
 
 window.addEventListener("popstate", () => {
     router.navigate(window.location.pathname);
@@ -20,12 +40,7 @@ window.addEventListener("popstate", () => {
 export function initializeRouteNavigation() {
     router.setRoutes(routes);
 
-    const currentPath = window.location.pathname;
-    if (!Object.keys(routes).includes(currentPath)) {
-        router.pushRoute("/");
-    } else {
-        router.pushRoute(currentPath);
-    }
+    router.pushRoute("/");
 
     navLinks.forEach(function (link) {
         link.addEventListener("click", function onNavigate(event) {
@@ -83,12 +98,14 @@ function nextStepButton() {
     button
         .querySelector(".next-step")
         .addEventListener("click", function navigateToNextStep() {
-            const routesArray = Object.keys(routes);
-            for (let i = 0; i < routesArray.length; i++) {
-                if (routesArray[i] == router.currentRoute) {
-                    const nextStep = routesArray[i + 1];
+            for (let i = 0; i < routes.length; i++) {
+                if (routes[i].path == router.currentRoute) {
+                    const nextStep = routes[i + 1].path;
                     router.pushRoute(nextStep);
-                    updateLinksStyle(getCurrentLink(nextStep));
+
+                    const nextStepLink = getCurrentLink(nextStep);
+                    nextStepLink.classList.remove("disable");
+                    updateLinksStyle(nextStepLink);
                     return;
                 }
             }
