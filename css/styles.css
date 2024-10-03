@@ -78,6 +78,10 @@
         color: var(--cool-gray);
     }
 
+    .marine-blue {
+        color: var(--marine-blue);
+    }
+
     .fs-small {
         font-size: var(--fs-small);
     }
@@ -100,6 +104,10 @@
 
     .text-center {
         text-align: center;
+    }
+
+    .capitalize {
+        text-transform: capitalize;
     }
 }
 
@@ -188,22 +196,33 @@
     }
 
     .info-form input {
-        padding: 0.5em;
+        padding: 0.5em 0.75em;
         border-radius: var(--radius-sm);
         border: 1px solid var(--light-gray);
         color: var(--marine-blue);
         font-weight: var(--fw-bold);
-        margin-bottom: 1em;
-    }
-
-    .info-form input:last-child {
-        margin-bottom: 0;
     }
 
     .info-form label {
+        position: relative;
+        display: grid;
+        gap: 2px;
         font-size: var(--fs-small);
         color: var(--marine-blue);
-        margin-bottom: 0.2em;
+        margin-bottom: 1.5em;
+    }
+
+    .info-form input.error {
+        border-color: var(--strawberry-red);
+    }
+
+    .error-msg {
+        display: none;
+        position: absolute;
+        right: 0;
+        color: var(--strawberry-red);
+        font-size: var(--fs-xs);
+        font-weight: var(--fw-bold);
     }
 
     /* STEP 2 */
@@ -236,9 +255,12 @@
     .plan:hover,
     .plan:focus,
     .plan[aria-checked="true"] {
-        background-color: var(--alabaster);
         border: 1px solid var(--purplish-blue);
         outline: none;
+    }
+
+    .plan[aria-checked="true"] {
+        background-color: var(--alabaster);
     }
 
     .switch {
@@ -253,6 +275,10 @@
         opacity: 0;
         width: 0;
         height: 0;
+    }
+
+    .plan * {
+        pointer-events: none;
     }
 
     .slider {
@@ -285,26 +311,10 @@
         box-shadow: 0 0 1px var(--marine-blue);
     }
 
-    input:checked + .slider:before {
+    input[checked="true"] + .slider:before {
         -webkit-transform: translateX(17px);
         -ms-transform: translateX(17px);
         transform: translateX(17px);
-    }
-
-    .renewal:has(input:checked) span:last-child {
-        color: var(--marine-blue);
-    }
-
-    .renewal:has(input:checked) span:first-child {
-        color: var(--cool-gray);
-    }
-
-    .renewal:has(:not(input:checked)) span:first-child {
-        color: var(--marine-blue);
-    }
-
-    .renewal:has(:not(input:checked)) span:last-child {
-        color: var(--cool-gray);
     }
 
     @media (min-width: 1000px) {
@@ -339,12 +349,20 @@
         user-select: none;
     }
 
+    .add-ons-form label:hover {
+        border-color: var(--purplish-blue);
+    }
+
     .add-ons-form input {
         position: absolute;
         opacity: 0;
         cursor: pointer;
         height: 0;
         width: 0;
+    }
+
+    .add-ons-form :is(div, p, span, input) {
+        pointer-events: none;
     }
 
     .checkmark {
@@ -359,10 +377,14 @@
         border: 1px solid var(--light-gray);
     }
 
+    .add-ons-form input ~ .checkmark {
+        border: 1px solid var(--light-gray);
+    }
+
     .add-ons-form input:checked ~ .checkmark {
         background-color: var(--purplish-blue);
-        border: none;
     }
+
     .add-ons-form label:has(input:checked) {
         background-color: var(--alabaster);
         border: 1px solid var(--purplish-blue);
@@ -407,18 +429,23 @@
         justify-content: space-between;
     }
 
-    .arcade {
+    .selected-plan {
         border-bottom: 1px solid var(--cool-gray);
         padding-bottom: 0.75em;
         margin-bottom: 0.75em;
     }
 
-    .arcade + tr {
+    .selected-plan + tr {
         margin-bottom: 0.5em;
     }
 
-    .arcade a {
+    .selected-plan a {
         border-bottom: 1.8px solid var(--cool-gray);
+    }
+
+    .selected-plan a:hover {
+        color: var(--purplish-blue);
+        border-color: var(--purplish-blue);
     }
 
     tfoot {
@@ -438,8 +465,15 @@
         border: none;
     }
 
+    .confirm:hover,
+    .confirm:focus,
+    .next-step:hover,
+    .next-step:focus {
+        opacity: 0.8;
+    }
+
     @media (min-width: 1000px) {
-        .arcade {
+        .selected-plan {
             padding-bottom: 1em;
             margin-bottom: 1em;
         }

@@ -65,27 +65,42 @@
                         number.
                     </p>
                     <form class="info-form">
-                        <label for="name">Name</label>
-                        <input
-                            id="name"
-                            name="name"
-                            placeholder="e.g Stephen King"
-                            type="text"
-                        />
-                        <label for="email">Email Address</label>
-                        <input
-                            id="email"
-                            name="email"
-                            placeholder="e.g stephenking@lorem.com"
-                            type="email"
-                        />
-                        <label for="phoneNumber">Phone Number</label>
-                        <input
-                            id="phoneNumber"
-                            name="phoneNumber"
-                            placeholder="e.g +1 234 567 890"
-                            type="text"
-                        />
+                        <label id="nameField">
+                            Name
+                            <input
+                                id="name"
+                                name="name"
+                                placeholder="e.g Stephen King"
+                                type="text"
+                            />
+                            <span id="errorMsg" class="error-msg"
+                                >This field is required</span
+                            >
+                        </label>
+                        <label id="emailField">
+                            Email Address
+                            <input
+                                id="email"
+                                name="email"
+                                placeholder="e.g stephenking@lorem.com"
+                                type="email"
+                            />
+                            <span id="errorMsg" class="error-msg"
+                                >This field is required</span
+                            >
+                        </label>
+                        <label id="phoneNumberField">
+                            Phone Number
+                            <input
+                                id="phoneNumber"
+                                name="phoneNumber"
+                                placeholder="e.g +1 234 567 890"
+                                type="text"
+                            />
+                            <span id="errorMsg" class="error-msg"
+                                >This field is required</span
+                            >
+                        </label>
                     </form>
                 </section>
             </template>
@@ -98,70 +113,22 @@
                     </p>
                     <form class="plans-form">
                         <fieldset>
-                            <div class="plans" role="radiogroup">
-                                <div
-                                    class="plan"
-                                    role="radio"
-                                    aria-checked="true"
-                                    tabindex="0"
-                                    aria-label="Arcade plan $9 per month"
+                            <div
+                                id="plans"
+                                class="plans"
+                                role="radiogroup"
+                            ></div>
+                            <div id="renewal" class="renewal">
+                                <span id="monthly" class="fw-bold fs-small"
+                                    >Monthly</span
                                 >
-                                    <img
-                                        src="./assets/images/icon-arcade.svg"
-                                        alt=""
-                                        aria-hidden="true"
-                                    />
-                                    <div>
-                                        <p class="fw-medium">Arcade</p>
-                                        <p class="fs-small cool-gray">$9/mo</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="plan"
-                                    role="radio"
-                                    aria-checked="false"
-                                    tabindex="0"
-                                    aria-label="Advanced plan $12 per month"
-                                >
-                                    <div class="form-2-img-container">
-                                        <img
-                                            src="./assets/images/icon-advanced.svg"
-                                            alt=""
-                                            aria-hidden="true"
-                                        />
-                                    </div>
-                                    <div>
-                                        <p class="fw-medium">Advanced</p>
-                                        <p class="fs-small cool-gray">$12/mo</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="plan"
-                                    role="radio"
-                                    aria-checked="false"
-                                    tabindex="0"
-                                    aria-label="Pro plan $15 per month"
-                                >
-                                    <div class="form-2-img-container">
-                                        <img
-                                            src="./assets/images/icon-pro.svg"
-                                            alt=""
-                                            aria-hidden="true"
-                                        />
-                                    </div>
-                                    <div>
-                                        <p class="fw-medium">Pro</p>
-                                        <p class="fs-small cool-gray">$15/mo</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="renewal">
-                                <span class="fw-bold fs-small">Monthly</span>
-                                <label class="switch">
+                                <label id="switch" class="switch">
                                     <input type="checkbox" />
                                     <span class="slider"></span>
                                 </label>
-                                <span class="fw-bold fs-small">Yearly</span>
+                                <span id="yearly" class="fw-bold fs-small"
+                                    >Yearly</span
+                                >
                             </div>
                         </fieldset>
                     </form>
@@ -175,47 +142,7 @@
                         Add-ons help enhance your gaming experience.
                     </p>
                     <form class="add-ons-form">
-                        <fieldset>
-                            <label>
-                                <div>
-                                    <p class="fw-medium fs-small">
-                                        Online service
-                                    </p>
-                                    <p class="cool-gray fs-xs">
-                                        Access to multiplayer games
-                                    </p>
-                                </div>
-                                <p class="purplish-blue fs-xs">+$1/mo</p>
-                                <input type="checkbox" checked />
-                                <span class="checkmark"></span>
-                            </label>
-                            <label>
-                                <div>
-                                    <p class="fw-medium fs-small">
-                                        Online service
-                                    </p>
-                                    <p class="cool-gray fs-xs">
-                                        Extra 1TB of cloud save
-                                    </p>
-                                </div>
-                                <p class="purplish-blue fs-xs">+$2/mo</p>
-                                <input type="checkbox" checked />
-                                <span class="checkmark"></span>
-                            </label>
-                            <label>
-                                <div>
-                                    <p class="fw-medium fs-small">
-                                        Customizable profile
-                                    </p>
-                                    <p class="cool-gray fs-xs">
-                                        Custom theme on your profile
-                                    </p>
-                                </div>
-                                <p class="purplish-blue fs-xs">+$2/mo</p>
-                                <input type="checkbox" />
-                                <span class="checkmark"></span>
-                            </label>
-                        </fieldset>
+                        <fieldset id="addOns"></fieldset>
                     </form>
                 </section>
             </template>
@@ -226,37 +153,7 @@
                     <p class="form-desc cool-gray">
                         Double-check everything looks OK before confirming.
                     </p>
-                    <table cellspacing="0">
-                        <tbody>
-                            <tr class="arcade">
-                                <td>
-                                    <p class="fw-medium fs-small">
-                                        Arcade (Monthly)
-                                    </p>
-                                    <a class="cool-gray fs-small" href="#"
-                                        >Change</a
-                                    >
-                                </td>
-                                <td class="fw-bold fs-small">$9/mo</td>
-                            </tr>
-                            <tr>
-                                <td class="fs-small cool-gray">
-                                    Online service
-                                </td>
-                                <td class="fs-small">+$1/mo</td>
-                            </tr>
-                            <tr>
-                                <td class="fs-small cool-gray">
-                                    Larger storage
-                                </td>
-                                <td class="fs-small">+$2/mo</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <td class="cool-gray fs-small">Total(per month)</td>
-                            <td class="purplish-blue fw-bold">$12/mo</td>
-                        </tfoot>
-                    </table>
+                    <table id="finishingUpTable" cellspacing="0"></table>
                 </section>
             </template>
 

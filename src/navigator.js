@@ -53,7 +53,7 @@ export function initializeRouteNavigation() {
 
 function navigateToStep1() {
     const step1Page = document.createElement("step-1-page");
-    footer.replaceChildren(nextStepButton());
+    footer.replaceChildren(nextStepButton(false));
     main.replaceChildren(step1Page);
 }
 
@@ -92,24 +92,15 @@ function goBackButton() {
     return button;
 }
 
-function nextStepButton() {
+function nextStepButton(handleNavigation = true) {
     const buttonTemplate = document.getElementById("nextStepTemplate");
     const button = buttonTemplate.content.cloneNode(true);
-    button
-        .querySelector(".next-step")
-        .addEventListener("click", function navigateToNextStep() {
-            for (let i = 0; i < routes.length; i++) {
-                if (routes[i].path == router.currentRoute) {
-                    const nextStep = routes[i + 1].path;
-                    router.pushRoute(nextStep, true);
 
-                    const nextStepLink = getCurrentLink(nextStep);
-                    nextStepLink.classList.remove("disable");
-                    updateLinksStyle(nextStepLink);
-                    return;
-                }
-            }
-        });
+    if (handleNavigation) {
+        button
+            .querySelector(".next-step")
+            .addEventListener("click", navigateToNextStep);
+    }
     return button;
 }
 
@@ -122,7 +113,21 @@ function confirmButton() {
     return button;
 }
 
-function updateLinksStyle(currentLink) {
+export function navigateToNextStep() {
+    for (let i = 0; i < routes.length; i++) {
+        if (routes[i].path == router.currentRoute) {
+            const nextStep = routes[i + 1].path;
+            router.pushRoute(nextStep, true);
+
+            const nextStepLink = getCurrentLink(nextStep);
+            nextStepLink.classList.remove("disable");
+            updateLinksStyle(nextStepLink);
+            return;
+        }
+    }
+}
+
+export function updateLinksStyle(currentLink) {
     navLinks.forEach(function updateLinksClass(link) {
         link.classList.remove("current");
         link.blur();
@@ -130,6 +135,6 @@ function updateLinksStyle(currentLink) {
     currentLink.classList.add("current");
 }
 
-function getCurrentLink(currentRoute) {
+export function getCurrentLink(currentRoute) {
     return Array.from(navLinks).find((link) => link.pathname == currentRoute);
 }
