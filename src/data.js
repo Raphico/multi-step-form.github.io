@@ -1,19 +1,19 @@
 export const plans = [
     {
         id: 1,
-        image: "assets/images/icon-arcade.svg",
+        image: "https://raphico.github.io/multi-step-form.github.io/assets/images/icon-arcade.svg",
         title: "Arcade",
         price: 9,
     },
     {
         id: 2,
-        image: "assets/images/icon-advanced.svg",
+        image: "https://raphico.github.io/multi-step-form.github.io/assets/images/icon-advanced.svg",
         title: "Advanced",
         price: 12,
     },
     {
         id: 3,
-        image: "assets/images/icon-pro.svg",
+        image: "https://raphico.github.io/multi-step-form.github.io/assets/images/icon-pro.svg",
         title: "Pro",
         price: 15,
     },
