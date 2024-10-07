@@ -50,6 +50,8 @@ export class Step2Page extends HTMLElement {
             <img
                 src="${plan.image}"
                 alt=""
+                width="40"
+                height="40"
                 aria-hidden="true"
             />
             <div>

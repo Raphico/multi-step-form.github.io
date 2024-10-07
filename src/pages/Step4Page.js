@@ -38,7 +38,15 @@ export class Step4Page extends HTMLElement {
             renewalPlan === "yearly"
                 ? selectedPlan.price * 10
                 : selectedPlan.price;
-
+        
+        const totalAddOnsPrice = selectedAddOns.reduce(function calculateAddOnsTotal(acc, addOn) {
+            return acc +
+                (renewalPlan === "yearly"
+                    ? addOn.price * 10
+                    : addOn.price)
+                
+        }, 0)
+        
         const addOnsHTML = selectedAddOns
             .map(function createAddOnHTML(addOn) {
                 return `
@@ -76,21 +84,7 @@ export class Step4Page extends HTMLElement {
                 <tr>
                     <td class="cool-gray fs-small">Total (per ${renewalPlan})</td>
                     <td class="purplish-blue fw-bold">
-                        $${
-                            totalPlanPrice +
-                            selectedAddOns.reduce(function calculateAddOnsTotal(
-                                acc,
-                                addOn
-                            ) {
-                                return (
-                                    acc +
-                                        (renewalPlan === "yearly"
-                                            ? addOn.price * 10
-                                            : addOn.price),
-                                    0
-                                );
-                            })
-                        }
+                        $${totalPlanPrice + totalAddOnsPrice}
                         /${renewalPlan === "yearly" ? "yr" : "mo"}
                     </td>
                 </tr>
