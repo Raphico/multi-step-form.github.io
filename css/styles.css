@@ -48,8 +48,8 @@
         text-decoration: none;
     }
 
-    ul[role="list"],
-    ol[role="list"] {
+    ul,
+    ol {
         list-style-type: none;
     }
 
